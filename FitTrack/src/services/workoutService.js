@@ -1,10 +1,11 @@
-const API_URL = "http://localhost:5000/api/workouts";
+const API_URL =
+  "https://fittrackpro-49w5.onrender.com/api/workouts";
 
 export const getWorkouts = async (userId) => {
   const response = await fetch(
     `${API_URL}/${userId}`
   );
-  
+
   if (!response.ok) {
     throw new Error("Failed to fetch workouts");
   }
