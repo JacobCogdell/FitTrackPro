@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import Workouts from "./pages/Workouts";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AddWorkout from "./pages/AddWorkout";
 
 function App() {
   return (
@@ -49,6 +50,16 @@ function App() {
             </ProtectedRoute>
           }
         />
+        
+        <Route
+          path="/workouts/new"
+          element={
+            <ProtectedRoute>
+              <AddWorkout />
+            </ProtectedRoute>
+          }
+        />
+        
       </Routes>
 
       <Footer />

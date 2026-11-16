@@ -1,15 +1,30 @@
-function Header() {
-  return (
-    <header className="site-header">
-      <h1 className="site-title">FitTrack Pro</h1>
+import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
-      <nav className="site-nav">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Workouts</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
+function Header() {
+  const { isAuthenticated, logout } = useAuth();
+
+  return (
+    <header>
+      <h1>FitTrack Pro</h1>
+
+      <nav className="app-nav">
+        {isAuthenticated ? (
+          <>
+            <Link to="/dashboard">Dashboard</Link>{" | "}
+            <Link to="/workouts">Workouts</Link>{" | "}
+            <Link to="/workouts/new">Add Workout</Link>{" | "}
+            <Link to="/profile">Profile</Link>{" | "}
+            <button onClick={logout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/">Login</Link>{" | "}
+            <Link to="/register">Register</Link>
+          </>
+        )}
       </nav>
     </header>
   );
