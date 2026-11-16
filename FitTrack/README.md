@@ -1,16 +1,99 @@
-# React + Vite
+FitTrack Pro
+FitTrack Pro is a full-stack fitness tracking application that allows users to register, authenticate, and track workouts. The application was developed using the MERN architecture with a React frontend, Express backend, MongoDB Atlas database, and JWT-based authentication.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+User Registration
+Create a new account with name, email, and password
+Passwords are securely hashed using bcrypt
+User data is stored in MongoDB Atlas
+User Authentication
+Login using registered credentials
+JWT token generation and validation
+Protected routes for authenticated users
+Logout functionality
+Workout Tracking
+Create workouts with:
+Exercise Type
+Duration
+Workout Date
+Store workouts in MongoDB Atlas
+Display workout history
+Filter workout history by authenticated user
+Dashboard
+Personalized greeting
+Displays total workout count for the logged-in user
+Technology Stack
+Frontend
+React
+React Router
+Vite
+CSS
+Backend
+Node.js
+Express
+Database
+MongoDB Atlas
+Mongoose
+Authentication
+JSON Web Token (JWT)
+bcryptjs
+Testing
+Vitest
+React Testing Library
+Project Structure
+FitTrackPro
+├── FitTrack
+│   ├── src
+│   ├── public
+│   └── package.json
+│
+└── FitTrackBackend
+    ├── config
+    ├── controllers
+    ├── models
+    ├── routes
+    └── package.json
+User Stories Completed
+US-1 User Registration
+User registration form
+Account creation
+Password hashing
+MongoDB persistence
+US-2 Authentication
+Login functionality
+JWT generation
+Protected routes
+Logout capability
+US-3 Workout Tracking
+Create workouts
+View workout history
+Store workouts in MongoDB
+Display user-specific workout history
+Unit Tests
+Basic rendering tests were created for:
 
-Currently, two official plugins are available:
+Login Page
+Register Page
+Add Workout Page
+Workout History Page
+Installation
+Frontend
+cd FitTrack
+npm install
+npm run dev
+Backend
+cd FitTrackBackend
+npm install
+npm run dev
+Environment Variables
+Backend (.env)
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+Build
+npm run build
+Deployment
+Frontend deployed using Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Author
+Jacob Cogdell
