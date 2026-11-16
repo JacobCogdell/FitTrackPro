@@ -3,8 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import Workouts from "./pages/Workouts";
+import Profile from "./pages/Profile";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -12,7 +16,7 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Register />} />
+        <Route path="/" element={<Login />} />
 
         <Route
           path="/register"
@@ -21,7 +25,29 @@ function App() {
 
         <Route
           path="/dashboard"
-          element={<Dashboard />}
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/workouts"
+          element={
+            <ProtectedRoute>
+              <Workouts />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
         />
       </Routes>
 
